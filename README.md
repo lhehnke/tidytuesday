@@ -5,8 +5,8 @@
 #### Interactive map using [gganimate](https://github.com/thomasp85/gganimate)
 ![Interactive map](https://raw.githubusercontent.com/lhehnke/tidytuesday/master/meteorite-impacts/meteorite_map_animated.gif)
 
-#### Static map 
+#### Static pixel map 
 
-This map was inspired by [Taras Kaduk](https://taraskaduk.com/2017/11/26/pixel-maps/).
+This pixel map was inspired by [Taras Kaduk](https://taraskaduk.com/2017/11/26/pixel-maps/).
 
 ![Static map](https://raw.githubusercontent.com/lhehnke/tidytuesday/master/meteorite-impacts/meteorite_map.png)
