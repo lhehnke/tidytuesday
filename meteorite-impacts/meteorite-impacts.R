@@ -83,7 +83,7 @@ ggplot() +
   geom_point(data = dots, aes(x = long, y = lat), col = "grey45", size = 0.7) + 
   geom_point(data = met_df, aes(x = long, y = lat, size = 0.8, colour = "red")) +
   geom_point(data = met_df, aes(x = long, y = lat, size = sqrt(mass)), colour = "red", alpha = 0.4) +
-  labs(title = "#tidytuesday: Meteorite impacts from 1900-2010", 
+  labs(title = "\n#tidytuesday: Meteorite impacts from 1900-2010", 
        subtitle = "Point sizes indicating meteorite mass in grams", 
       caption = "dataplanes.org | @DataPlanes \nInspired by @taraskaduk \nData source: NASA \n", x = NULL, y = NULL) + 
   coord_cartesian(ylim = c(-50, 90)) + map_theme
@@ -104,11 +104,11 @@ meteorite_map <- ggplot() +
   shadow_mark() + enter_fade() + exit_fade() + ease_aes("quadratic-in-out") +
   labs(title = "#tidytuesday: Meteorite impacts from 1900-{closest_state}", 
        subtitle = "Point sizes indicating meteorite mass in grams", 
-       caption = "dataplanes.org | @DataPlanes \nData source: NASA \n", x = NULL, y = NULL) + 
+       caption = "dataplanes.org | @DataPlanes \nData source: NASA", x = NULL, y = NULL) + 
   coord_cartesian(ylim = c(-50, 90)) + map_theme + 
   theme(plot.caption = element_text(size = 16), 
         plot.subtitle = element_text(size = 20), 
         plot.title = element_text(size = 28))
 
 # Save GIF
-anim_save("meteorite-impacts/meteorite_map.gif", meteorite_map, width = 1800, height = 900)
+anim_save("meteorite-impacts/meteorite_map_animated.gif", meteorite_map, width = 1800, height = 900)
