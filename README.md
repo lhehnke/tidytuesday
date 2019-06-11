@@ -10,3 +10,7 @@
 This pixel map was inspired by [Taras Kaduk](https://taraskaduk.com/2017/11/26/pixel-maps/).
 
 ![Static map](https://raw.githubusercontent.com/lhehnke/tidytuesday/master/meteorite-impacts/meteorite_map.png)
+
+Both maps show fallen as well as found meteorites. Simply uncomment the respective line in the code if you want to filter by type.
+
+
