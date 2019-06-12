@@ -1,4 +1,4 @@
-# tidytuesday
+# #TidyTuesday
 
 ## [Meteorite impacts (2019-06-11)](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-06-11)
 
