@@ -52,7 +52,7 @@ map_theme <- theme(axis.line = element_blank(),
 met_df <- meteorites %>%
   #filter(fall == "Fell") %>%
   select(year, long, lat, mass) %>%
-  mutate(decade = floor(year/10) * 10) %>%
+  mutate(decade = floor(year / 10) * 10) %>%
   filter(decade >= 1900 & year <= 2010) %>%
   na.omit()
 
