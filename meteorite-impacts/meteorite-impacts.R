@@ -39,7 +39,7 @@ map_theme <- theme(axis.line = element_blank(),
                    panel.grid.minor = element_blank(), 
                    plot.background = element_rect(fill = "#212121", colour = NA), 
                    plot.caption = element_text(colour = "#ffffff", size = 12), 
-                   plot.margin = margin(12, 0, 0, 12),
+                   plot.margin = margin(10, 2, 2, 10),
                    plot.subtitle = element_text(colour = "#ffffff", size = 14), 
                    plot.title = element_text(face = "bold", colour = "#ffffff", size = 18), 
                    text = element_text(family = "Lato"))
