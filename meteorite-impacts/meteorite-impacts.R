@@ -52,7 +52,7 @@ map_theme <- theme(axis.line = element_blank(),
 met_df <- meteorites %>%
   #filter(fall == "Fell") %>%
   select(year, long, lat, mass) %>%
-  mutate(decade = floor(year/10) * 10) %>%
+  mutate(decade = floor(year / 10) * 10) %>%
   filter(decade >= 1900 & year <= 2010) %>%
   na.omit()
 
@@ -103,7 +103,7 @@ meteorite_map <- ggplot() +
   geom_point(data = met_df, aes(x = long, y = lat, size = sqrt(mass)), colour = "red", alpha = 0.5) +
   transition_states(met_df$decade, transition_length = 1, state_length = 3, wrap = FALSE) +
   shadow_mark() + enter_fade() + exit_fade() + ease_aes("quadratic-in-out") +
-  labs(title = "#tidytuesday: Meteorite impacts from 1900-{closest_state}", 
+  labs(title = "#tidytuesday: Meteorite impacts from 1900-{closest_state} by decade", 
        subtitle = "Point sizes indicating meteorite mass in grams", 
        caption = "dataplanes.org | @DataPlanes \nData source: NASA", x = NULL, y = NULL) + 
   coord_cartesian(ylim = c(-50, 90)) + map_theme + 
