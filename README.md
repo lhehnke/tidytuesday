@@ -4,8 +4,9 @@
 
 The script contains code to map all UFO sightings on NASA's night lights image in grayscale plus a 3D animation of UFO sightings around the world using `threejs`. 
 
-![UFO map](https://raw.githubusercontent.com/lhehnke/tidytuesday/master/ufo-sightings/UFO_map.png)
+![UFO_map](https://raw.githubusercontent.com/lhehnke/tidytuesday/master/ufo-sightings/UFO_map.png)
 
+<img src="https://raw.githubusercontent.com/lhehnke/tidytuesday/master/ufo-sightings/globe_sightings.png" width="50%" height="50%">
 
 ## [Meteorite impacts (2019-06-11)](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-06-11)
 
