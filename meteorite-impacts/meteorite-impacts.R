@@ -16,7 +16,7 @@
 if (!require("pacman")) install.packages("pacman")
 library(pacman)
 
-p_load(gganimate, maps, tidyverse)
+p_load(extrafont, gganimate, maps, tidyverse)
 
 # Retrieve data
 meteorites <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-06-11/meteorites.csv")
@@ -39,9 +39,10 @@ map_theme <- theme(axis.line = element_blank(),
                    panel.grid.minor = element_blank(), 
                    plot.background = element_rect(fill = "#212121", colour = NA), 
                    plot.caption = element_text(colour = "#ffffff", size = 12), 
-                   plot.margin = grid::unit(c(0, 0, 0, 0), "mm"), 
+                   plot.margin = margin(12, 0, 0, 12),
                    plot.subtitle = element_text(colour = "#ffffff", size = 14), 
-                   plot.title = element_text(face = "bold", colour = "#ffffff", size = 18))
+                   plot.title = element_text(face = "bold", colour = "#ffffff", size = 18), 
+                   text = element_text(family = "Lato"))
 
 
 #----------------#
@@ -84,7 +85,7 @@ ggplot() +
   geom_point(data = dots, aes(x = long, y = lat), col = "grey45", size = 0.7) + 
   geom_point(data = met_df, aes(x = long, y = lat, size = 0.8, colour = "red")) +
   geom_point(data = met_df, aes(x = long, y = lat, size = sqrt(mass)), colour = "red", alpha = 0.4) +
-  labs(title = "\n#tidytuesday: Meteorite impacts from 1900-2010", 
+  labs(title = "\n#TidyTuesday: Meteorite impacts from 1900-2010", 
        subtitle = "Point sizes indicating meteorite mass in grams", 
       caption = "dataplanes.org | @DataPlanes \nInspired by @taraskaduk \nData source: NASA \n", x = NULL, y = NULL) + 
   coord_cartesian(ylim = c(-50, 90)) + map_theme
@@ -103,7 +104,7 @@ meteorite_map <- ggplot() +
   geom_point(data = met_df, aes(x = long, y = lat, size = sqrt(mass)), colour = "red", alpha = 0.5) +
   transition_states(met_df$decade, transition_length = 1, state_length = 3, wrap = FALSE) +
   shadow_mark() + enter_fade() + exit_fade() + ease_aes("quadratic-in-out") +
-  labs(title = "#tidytuesday: Meteorite impacts from 1900-{closest_state} by decade", 
+  labs(title = "#TidyTuesday: Meteorite impacts from 1900-{closest_state} by decade", 
        subtitle = "Point sizes indicating meteorite mass in grams", 
        caption = "dataplanes.org | @DataPlanes \nData source: NASA", x = NULL, y = NULL) + 
   coord_cartesian(ylim = c(-50, 90)) + map_theme + 
