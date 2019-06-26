@@ -17,6 +17,7 @@ if (!require("pacman")) install.packages("pacman")
 library(pacman)
 
 p_load(emo, extrafont, grid, jpeg, maps, threejs, tidyverse)
+## Additional fonts: Exan (https://www.behance.net/gallery/36169711/Exan-3-Free-Font) | Orbitron (https://www.theleagueofmoveabletype.com/orbitron)
 
 # Retrieve data
 ufo_df <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-06-25/ufo_sightings.csv")
@@ -46,12 +47,12 @@ ggplot() +
       panel.grid.major = element_blank(),
       panel.grid.minor = element_blank(), 
       plot.margin = grid::unit(c(0, 0, 0, 0), "mm")) +
-  annotate("text", x = -160, y = -18, hjust = 0, size = 13,
-           label = paste(str_c("UFO sightings ", emo::ji("alien"))), color = "green", family = "Open Sans", alpha = 0.9) +
+  annotate("text", x = -160, y = -18, hjust = 0, size = 14,
+           label = paste(str_c("UFO sightings ", emo::ji("alien"))), color = "green", family = "Exan", alpha = 0.9) + # Open Sans
   annotate("text", x = -160, y = -26, hjust = 0, size = 7, 
-           label = paste(str_c("Data: National UFO Reporting Center")), color = "white", alpha = 0.8) +
+           label = paste(str_c("Data: National UFO Reporting Center")), color = "white", family = "Orbitron", alpha = 0.8) +
   annotate("text", x = -160, y = -30, hjust = 0, size = 6, 
-           label = paste("@DataPlanes"), color = "white", alpha = 0.5) +
+           label = paste("@DataPlanes"), color = "white", family = "Orbitron", alpha = 0.5) +
   coord_equal()
 
 ggsave("ufo-sightings/UFO_map.png", width = 36, height = 18, units = "in", dpi = 100)
